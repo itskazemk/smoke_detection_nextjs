@@ -14,7 +14,7 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Records {
+model Record {
     id        String   @id @default(uuid())
     sensorId  String
     amount    Int
@@ -30,3 +30,15 @@ model Records {
     // primaryVehicle   Connection[] @relation("primaryVehicle")
     // secondaryVehicle Connection[] @relation("secondaryVehicle")
 }
+
+// model Sensor {
+//     id        String   @id @default(uuid())
+//     title     String
+//     createdAt DateTime @default(now())
+// }
+
+// model Location {
+//     id        String   @id @default(uuid())
+//     title     String
+//     createdAt DateTime @default(now())
+// }

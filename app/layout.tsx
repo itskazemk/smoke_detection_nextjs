@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const vazirmatn = localFont({
-  src: "./fonts/Vazirmatn[wght].woff",
+const Vazirmatn = localFont({
+  src: "./fonts/Vazirmatn[wght].woff2",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${vazirmatn.variable}  antialiased`}
+        className={`${Vazirmatn.variable}  antialiased`}
       >
         {children}
       </body>
