@@ -11,7 +11,7 @@ export function DatePickerInput({
   onChange,
   //   containerStyle = { display: "block", zIndex: 50 },
   //   className = "",
-  //   inputClass = "form-input w-full",
+  inputClass = "",
   format = "YYYY/MM/DD",
   calendar = persian,
   locale = persian_fa,
@@ -22,7 +22,7 @@ export function DatePickerInput({
     <DatePicker
       name={name}
       //   containerStyle={containerStyle}
-      //   inputClass={inputClass}
+      inputClass={inputClass}
       value={value}
       //   portal={true}
       onChange={(date) => {

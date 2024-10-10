@@ -32,9 +32,9 @@ export default function SearchBar() {
   }
 
   return (
-    <form onSubmit={handleSearch} className="flex items-center space-x-2">
-      <DatePickerInput name="startDate" value={startDate} onChange={setStartDate} />
-      <DatePickerInput name="endDate" value={endDate} onChange={setEndDate} />
+    <form onSubmit={handleSearch} className="flex items-center gap-2">
+      <DatePickerInput name="startDate" value={startDate} onChange={setStartDate} inputClass="h-full" />
+      <DatePickerInput name="endDate" value={endDate} onChange={setEndDate} inputClass="h-full" />
       <button type="submit" className="rounded-md bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
         جستجو
       </button>
