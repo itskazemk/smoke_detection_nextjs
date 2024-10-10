@@ -1,9 +1,5 @@
 "use client";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
-import { DatePickerInput } from "./SimpleInputs";
-import { useState } from "react";
-import { i2ToIsoGregorian } from "@/utils/helper";
-import { DateObject } from "react-multi-date-picker";
 
 export default function Pagination({ totalPages }: { totalPages: number }) {
   const pathname = usePathname();
@@ -18,21 +14,34 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
   };
 
   function handlePrevious() {
-    const pageIndex = createPageURL(currentPage - 1);
-    console.log(pageIndex);
+    createPageURL(currentPage - 1);
   }
+
   function handleNext() {
-    const pageIndex = createPageURL(currentPage + 1);
-    console.log(pageIndex);
+    createPageURL(currentPage + 1);
   }
 
   return (
-    <div>
-      <div onClick={handlePrevious}>قبل</div>
-      <div>
+    <div className="mt-4 flex items-center justify-between">
+      <button
+        onClick={handlePrevious}
+        className="rounded-md bg-gray-200 px-3 py-1 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500"
+        disabled={currentPage === 1}
+      >
+        قبل
+      </button>
+
+      <div className="text-sm text-gray-600 dark:text-gray-300">
         صفحه {currentPage} از {totalPages}
       </div>
-      <div onClick={handleNext}>بعد</div>
+
+      <button
+        onClick={handleNext}
+        className="rounded-md bg-gray-200 px-3 py-1 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-500"
+        disabled={currentPage === totalPages}
+      >
+        بعد
+      </button>
     </div>
   );
 }

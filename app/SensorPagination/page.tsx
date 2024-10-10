@@ -13,27 +13,11 @@ export default async function Page({
   };
 }) {
   const columns = [
-    {
-      accessorKey: "sensorId",
-      header: <span>sensorId</span>,
-      //   cell: (info) => (
-      //     <Link to={`${info.getValue()}`}>
-      //       <ArrowRightEndOnRectangleIcon className="w-6" />
-      //     </Link>
-      //   ),
-    },
-    // { accessorKey: "location", header:  <span>slotId</span> },
-    { accessorKey: "amount", header: <span>amount</span> },
-    {
-      accessorKey: "smoke",
-      header: <span>smoke</span>,
-      //   cell: (info) => `ریال ${numberWithCommas(info.getValue())}`,
-    },
-    {
-      accessorKey: "createdAt",
-      header: <span>createdAt</span>,
-      //   cell: (info) => `ریال ${numberWithCommas(info.getValue())}`,
-    },
+    { accessorKey: "sensorId", header: <span>Sensor ID</span> },
+    { accessorKey: "location", header: <span>Location</span> },
+    { accessorKey: "amount", header: <span>Amount</span> },
+    { accessorKey: "smoke", header: <span>Smoke Level</span> },
+    { accessorKey: "createdAt", header: <span>Created At</span> },
   ];
 
   const startDate = searchParams?.startDate || "";
@@ -41,15 +25,15 @@ export default async function Page({
   const currentPage = Number(searchParams?.page) || 0;
 
   const data = await getSensorsDataPagination({ pageIndex: currentPage, pageSize: 10 });
-  console.log(111, currentPage);
 
   return (
-    <div>
+    <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
       <SearchBar />
 
-      <div>
+      <div className="my-4">
         <TransactionsTable data={data} columns={columns} />
       </div>
+
       <Pagination totalPages={data.length} />
     </div>
   );
