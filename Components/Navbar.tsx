@@ -4,6 +4,7 @@ import { AppShell, Burger, Button, Group, UnstyledButton } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 // import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from "./Navbar.module.css";
+import Link from "next/link";
 
 export function Navbar({ children }) {
   const [opened, { toggle }] = useDisclosure();
@@ -21,7 +22,13 @@ export function Navbar({ children }) {
             {/* <MantineLogo size={30} /> */}
 
             <Group ml="xl" gap={0} visibleFrom="sm">
-              <button className={classes.control}>خانه</button>
+              <button className={classes.control}>
+                <Link href="/">خانه</Link>
+              </button>
+              <button className={classes.control}>
+                <Link href="/SensorPagination">اطلاعات کل سنسور‌ها</Link>
+              </button>
+
               {/* <button className={classes.control}></button> */}
               {/* <button className={classes.control}>Contacts</button> */}
               {/* <button className={classes.control}>Support</button> */}
