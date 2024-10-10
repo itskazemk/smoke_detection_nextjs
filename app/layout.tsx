@@ -7,7 +7,6 @@ import { Navbar } from "@/Components/Navbar";
 
 const Vazirmatn = localFont({
   src: "./fonts/Vazirmatn[wght].woff2",
-  variable: "--font-geist-sans",
   weight: "100 900",
 });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className={`${Vazirmatn.variable} antialiased`}>
+      <body className={`${Vazirmatn.className} antialiased`}>
         <MantineProvider>
           <Navbar>{children}</Navbar>
         </MantineProvider>
