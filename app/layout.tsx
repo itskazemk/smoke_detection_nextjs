@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "@mantine/core/styles.css";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { Navbar } from "@/Components/Navbar";
 
 const Vazirmatn = localFont({
   src: "./fonts/Vazirmatn[wght].woff2",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,11 +22,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${Vazirmatn.variable}  antialiased`}
-      >
-        {children}
+    <html lang="en" dir="rtl">
+      <head>
+        <ColorSchemeScript />
+      </head>
+      <body className={`${Vazirmatn.variable} antialiased`}>
+        <MantineProvider>
+          <Navbar>{children}</Navbar>
+        </MantineProvider>
       </body>
     </html>
   );
