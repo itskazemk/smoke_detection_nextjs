@@ -15,7 +15,7 @@ export default async function Page({
   const columns = [
     {
       accessorKey: "sensorId",
-      header: <span>ID</span>,
+      header: <span>sensorId</span>,
       //   cell: (info) => (
       //     <Link to={`${info.getValue()}`}>
       //       <ArrowRightEndOnRectangleIcon className="w-6" />
@@ -23,15 +23,15 @@ export default async function Page({
       //   ),
     },
     // { accessorKey: "location", header:  <span>slotId</span> },
-    { accessorKey: "amount", header: <span>userId</span> },
+    { accessorKey: "amount", header: <span>amount</span> },
     {
       accessorKey: "smoke",
-      header: <span>amount</span>,
+      header: <span>smoke</span>,
       //   cell: (info) => `ریال ${numberWithCommas(info.getValue())}`,
     },
     {
       accessorKey: "createdAt",
-      header: <span>billAmount</span>,
+      header: <span>createdAt</span>,
       //   cell: (info) => `ریال ${numberWithCommas(info.getValue())}`,
     },
   ];
