@@ -50,7 +50,7 @@ export default async function Page({
       <div>
         <TransactionsTable data={data} columns={columns} />
       </div>
-      <Pagination totalPages={10} />
+      <Pagination totalPages={data.length} />
     </div>
   );
 }

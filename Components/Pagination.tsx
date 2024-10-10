@@ -30,7 +30,7 @@ export default function Pagination({ totalPages }: { totalPages: number }) {
     <div>
       <div onClick={handlePrevious}>قبل</div>
       <div>
-        {totalPages} صفحه {currentPage} از کل
+        صفحه {currentPage} از {totalPages}
       </div>
       <div onClick={handleNext}>بعد</div>
     </div>
