@@ -17,6 +17,7 @@ datasource db {
 model Record {
     id        String   @id @default(uuid())
     sensorId  String
+    location  String
     amount    Int
     smoke     Boolean
     createdAt DateTime @default(now())
