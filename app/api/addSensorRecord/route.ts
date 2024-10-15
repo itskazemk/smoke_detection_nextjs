@@ -5,13 +5,14 @@ interface input {
   sensorId: string;
   amount: number;
   smoke: boolean;
+  location: string;
 }
 
 export async function POST(req: any) {
-  const { sensorId, amount, smoke }: input = await req.json();
+  const { sensorId, location, amount, smoke }: input = await req.json();
   // const data = await req.json();
 
-  const persist = addSensorData({ sensorId, amount, smoke });
+  const persist = addSensorData({ sensorId, location, amount, smoke });
 
-  return NextResponse.json("Success");
+  return NextResponse.json(persist);
 }

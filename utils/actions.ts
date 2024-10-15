@@ -7,7 +7,8 @@ export async function getAllSensorsData() {
 
 export async function getSensorsDataPagination({ pageIndex, pageSize }) {
   const data = await db.record.findMany({ skip: pageIndex, take: pageSize });
-  return data;
+  const count = await db.record.count();
+  return { data, count };
 }
 
 export async function getSensorsDataSmokedPagination({ pageIndex, pageSize }) {
@@ -15,7 +16,7 @@ export async function getSensorsDataSmokedPagination({ pageIndex, pageSize }) {
   return data;
 }
 
-export async function addSensorData({ sensorId, amount, smoke }: any) {
-  const persist = await db.record.create({ data: { sensorId, amount, smoke } });
+export async function addSensorData({ sensorId, amount, smoke, location }: any) {
+  const persist = await db.record.create({ data: { sensorId, amount, smoke, location } });
   return persist;
 }
