@@ -6,7 +6,7 @@ export async function getAllSensorsData() {
 }
 
 export async function getSensorsDataPagination({ pageIndex, pageSize }) {
-  const data = await db.record.findMany({ skip: pageIndex, take: pageSize });
+  const data = await db.record.findMany({ skip: pageIndex * pageSize, take: pageSize });
   const count = await db.record.count();
   return { data, count };
 }

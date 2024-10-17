@@ -13,15 +13,15 @@ export default async function Page({
     page?: string;
   };
 }) {
-  const startDate = searchParams?.startDate || "";
-  const endDate = searchParams?.endDate || "";
+  // const startDate = searchParams?.startDate || null;
+  // const endDate = searchParams?.endDate || "";
   const currentPage = Number(searchParams?.page) || 0;
 
-  const fetchedData = await getSensorsDataPagination({ pageIndex: currentPage, pageSize: 10 });
+  const fetchedData = await getSensorsDataPagination({ pageIndex: currentPage - 1, pageSize: 10 });
 
   return (
     <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800">
-      <SearchBar />
+      {/* <SearchBar /> */}
 
       <div className="my-4">
         <TransactionsTable data={fetchedData.data} columns={SensorPaginationColumn} />
